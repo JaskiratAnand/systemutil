@@ -1,0 +1,87 @@
+.TH SYSTEMUTIL 1 "January 2024" "v0.1.0" "systemutil manual"
+
+.SH NAME
+systemutil \- Custom Linux Command
+
+.SH SYNOPSIS
+.B systemutil
+.I [options]
+.RI [ command [ options ] ]
+
+.SH DESCRIPTION
+.B systemutil
+is a custom Linux command that provides various functionalities.
+
+.SH COMMANDS
+.TP
+.B cpu getinfo
+Display CPU information.
+
+.TP
+.B memory getinfo
+Display memory information.
+
+.TP
+.B user create
+Create a new user.
+
+.TP
+.B user list
+List all regular users.
+
+.TP
+.B user list --sudo-only
+List users with sudo permissions.
+
+.TP
+.B user remove
+Remove a user.
+
+.TP
+.B file getinfo
+Get information about a file.
+
+.SH OPTIONS
+.TP
+.B -h, --help
+Show this help message.
+
+.TP
+.B -v, --version
+Display the version.
+
+.SH EXAMPLES
+.B systemutil -v
+Display the version.
+
+.B systemutil cpu getinfo
+Display CPU information.
+
+.B systemutil user create <username>
+Create a new user.
+
+.B systemutil file getinfo -s -p -o -m <file-name>
+Get detailed information about a file.
+
+.SH SEE ALSO
+.BR lscpu (1),
+.BR free (1),
+.BR useradd (8),
+.BR passwd (1),
+.BR userdel (8),
+.BR stat (1).
+
+.SH AUTHOR
+This manual page was written by Your Name <your.email@example.com>.
+
+.SH COPYRIGHT
+This is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2 of the License, or (at your option)
+any later version.
+
+.SH BUGS
+Report bugs to <your.email@example.com>.
+
+.SH DISCLAIMER
+This program is provided "as is" without warranty of any kind.
