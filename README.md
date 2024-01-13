@@ -7,11 +7,8 @@
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Examples](#examples)
 - [Options](#options)
-- [Contributing](#contributing)
-- [License](#license)
-- [Author](#author)
+
 
 ## Features
 
@@ -37,3 +34,36 @@ OR
   cd systemutil_package
   ./install.sh
 ```
+
+## Usage 
+
+* Display the version.
+```bash
+  systemutil -v
+```
+* Display CPU information.
+```bash
+  systemutil cpu getinfo
+```
+* Create a new user.
+```bash
+  systemutil user create <username>
+```
+* Show user list
+```bash
+  systemutil user list
+  systemutil user list --sudo-only
+```
+* Remove a user
+```bash
+  systemutil user remove <username>
+```
+* Get detailed information about a file.
+```bash
+  systemutil file getinfo -s -p -o -m <file-name>
+```
+
+## Options
+
+* -h, --help: Display help message.
+* -v, --version: Display the version.
