@@ -3,37 +3,41 @@
 VERSION="v0.1.0"
 
 show_help() {
-    echo "systemutil - Custom Linux Command"
-    echo "Version: $VERSION"
-    echo
-    echo "Usage: systemutil [options]"
-    echo
-    echo "Options:"
-    echo "  -h, --help      Show this help message"
-    echo "  -v, --version   Display the version"
-    echo "  cpu getinfo     Display CPU information"
-    echo "  memory getinfo  Display memory information"
-    echo "  user create     Create a new user"
-    echo "  user list       List all regular users"
-    echo "  user list --sudo-only  List users with sudo permissions"
-    echo "  user remove     Remove a user"
-    echo "  file getinfo [options] <file-name>"
-    echo "    Options:"
-    echo "      --size, -s             Print file size"
-    echo "      --permissions, -p     Print file permissions"
-    echo "      --owner, -o            Print file owner"
-    echo "      --last-modified, -m   Print last modification time"
-    echo
-    echo "Examples:"
-    echo "  systemutil -v"
-    echo "  systemutil cpu getinfo"
-    echo "  systemutil memory getinfo"
-    echo "  systemutil user create <username>"
-    echo "  systemutil user list"
-    echo "  systemutil user list --sudo-only"
-    echo "  systemutil user remove <username>"
-    echo "  systemutil file getinfo -s <file-name>"
-    echo "  systemutil file getinfo -p -o -m <file-name>"
+    cat <<EOL
+systemutil - Custom Linux Command
+Version: $VERSION
+
+Usage: systemutil [options] <command> [command_options]
+
+Options:
+  -h, --help      Show this help message
+  -v, --version   Display the version
+
+Commands:
+  cpu getinfo            Display CPU information
+  memory getinfo         Display memory information
+  user create <username> Create a new user
+  user list              List all regular users
+  user list --sudo-only  List users with sudo permissions
+  user remove <username> Remove a user
+  file getinfo [options] <file-name>
+    Options:
+      --size, -s             Print file size
+      --permissions, -p     Print file permissions
+      --owner, -o            Print file owner
+      --last-modified, -m   Print last modification time
+
+Examples:
+  systemutil -v
+  systemutil cpu getinfo
+  systemutil memory getinfo
+  systemutil user create john_doe
+  systemutil user list
+  systemutil user list --sudo-only
+  systemutil user remove john_doe
+  systemutil file getinfo -s example.txt
+  systemutil file getinfo -p -o -m example.txt
+EOL
 }
 
 show_version() {
